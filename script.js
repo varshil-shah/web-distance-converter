@@ -53,6 +53,6 @@ calculate = () => {
   } else {
     error.innerHTML = "";
     let ans = getResult(concatString, value);
-    answer.innerHTML = ans;
+    answer.value = ans;
   }
 };
