@@ -1,0 +1,56 @@
+body {
+  height: 100vh;
+  width: 100%;
+  font-family: "Noto Sans JP", sans-serif;
+  box-sizing: border-box;
+  background-color: blueviolet;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.error {
+  width: 100%;
+  color: #fff;
+  border-radius: 10px;
+  background-color: rgb(243, 69, 69);
+  padding: 1px 7px;
+}
+
+.info {
+  padding: 10px 15px;
+}
+
+.sel,
+input {
+  border: 1px solid #000;
+  outline: none;
+  padding: 8px 10px;
+  border-radius: 3px;
+}
+
+.sel {
+  cursor: pointer;
+}
+
+option {
+  font-size: 20px;
+}
+
+.form-tag {
+  /* background-color: aqua; */
+  height: auto;
+  padding: 12px 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+#answer {
+  color: red;
+  font-weight: bold;
+}

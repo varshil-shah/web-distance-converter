@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<meta name="Description" content="Enter your description here" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+	<link rel="stylesheet" href="style.css" />
+	<title>Distance Converter</title>
+</head>
+
+<body>
+
+	<head class="main">
+		<div class="container">
+			<div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12 form-tag align-content-center">
+				<h3 class="text-center mt-3 pb-2">Distance Converter</h3>
+				<p class="text-center error" id="error"></p>
+				<div class="info">
+					<label for="speed">Convert from</label>
+					<select class="w-100 sel mx-auto" onchange="getConvertFrom();" id="convertFrom">
+						<option value="mile">Mile</option>
+						<option value="km">Kilometer</option>
+						<option value="m">Meter</option>
+						<!-- TODO: Add centimeter -->
+					</select>
+				</div>
+				<div class="info">
+					<label for="username">Convert to</label>
+					<select required class="w-100 sel mx-auto" onchange="getConvertTo();" id="convertTo">
+						<option value="mile">Mile</option>
+						<option value="km">Kilometer</option>
+						<option value="m">Meter</option>
+						<!-- TODO: Add centimeter -->
+					</select>
+				</div>
+				<div class="info">
+					<label for="value">Value</label>
+					<input onchange="getInputValue();" autocomplete="off" type="number" class="w-100"
+						placeholder="Enter your value" required id="value" />
+				</div>
+				<button type="button" class="btn btn-primary ml-3 my-1" id="convert">
+					Convert
+				</button>
+				<div class="info">
+					<h5>Answer: <span id="answer"></span></h5>
+				</div>
+			</div>
+		</div>
+	</head>
+	<script src="script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
