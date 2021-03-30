@@ -11,9 +11,9 @@ const distanceValue = {
   "m-km": 0.001,
 };
 
-/* convertButton.addEventListener("click", () => {
+convertButton.addEventListener("click", () => {
   calculate();
-});*/
+});
 
 getConvertFrom = () => {
   let convertFrom = document.getElementById("convertFrom").value;
