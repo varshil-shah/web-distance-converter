@@ -4,7 +4,7 @@
 ![Converter](Image/page.png)
 
 ## Try now:
-Watch now [Click here](Varshil-Shah/distance-converter-js-live.github.io)
+Watch now [Click here](https://varshil-shah.github.io/distance-converter.github.io/)
 
 ## Objective:
 To convert distance from one unit to another.
