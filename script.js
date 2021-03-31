@@ -1,8 +1,61 @@
-var convertButton = document.getElementById("convert");
-var answer = document.getElementById("answer");
-const error = document.getElementById("error");
+let convertFrom = document.getElementById("convertFrom");
+let convertTo = document.getElementById("convertTo");
+let convertButton = document.getElementById("convert");
+let value = document.getElementById("value");
+let answer = document.getElementById("answer");
+let error = document.getElementById("error");
+error.classList.remove("error");
+
+let availableOption = {
+  Mile: "mile",
+  Kilometer: "km",
+  Meter: "m",
+  Centimeter: "cm",
+  Foot: "f",
+  Inch: "inch",
+};
+
+convertButton.addEventListener("click", () => {
+  calculate();
+});
+
+getConvertFrom = () => {
+  let convertFrom = document.getElementById("convertFrom").value;
+  console.log(`value: ${convertFrom}`);
+  return convertFrom;
+};
+
+getConvertTo = () => {
+  let convertTo = document.getElementById("convertTo").value;
+  console.log(`value: ${convertTo}`);
+  return convertTo;
+};
+
+getInputValue = () => {
+  let inputValue = document.getElementById("value").value;
+  console.log(`value: ${inputValue}`);
+  return inputValue;
+};
+
+setConvert = () => {
+  for (let value in availableOption) {
+    let createOption1 = document.createElement("option");
+    createOption1.value = availableOption[value];
+    createOption1.innerHTML = value;
+    convertFrom.appendChild(createOption1);
+
+    let createOption2 = document.createElement("option");
+    createOption2.value = availableOption[value];
+    createOption2.innerHTML = value;
+    convertTo.appendChild(createOption2);
+    console.log(`Inner value: ${availableOption[value]}`);
+  }
+};
+
+setConvert();
 
 const distanceValue = {
+  // TODO: Make more enhance
   "mile-km": 1.60934,
   "mile-m": 1609.34,
   "mile-f": 5280,
@@ -35,25 +88,6 @@ const distanceValue = {
   "cm-inch": 0.393701,
 };
 
-convertButton.addEventListener("click", () => {
-  calculate();
-});
-
-getConvertFrom = () => {
-  let convertFrom = document.getElementById("convertFrom").value;
-  return convertFrom;
-};
-
-getConvertTo = () => {
-  let convertTo = document.getElementById("convertTo").value;
-  return convertTo;
-};
-
-getInputValue = () => {
-  let inputValue = document.getElementById("value").value;
-  return inputValue;
-};
-
 getResult = (concatString, value) => {
   for (let val in distanceValue) {
     if (concatString == val) {
@@ -67,12 +101,15 @@ calculate = () => {
   let concatString = getConvertFrom() + "-" + getConvertTo();
   let value = getInputValue();
   if (getConvertFrom() == getConvertTo()) {
+    error.classList.add("error");
     answer.value = "NULL";
     error.innerHTML = "Please select different conversion";
   } else if (value <= 0) {
+    error.classList.add("error");
     answer.value = "NULL";
     error.innerHTML = "Value must be greater than zero";
   } else {
+    error.classList.remove("error");
     error.innerHTML = "";
     let ans = getResult(concatString, value);
     answer.value = ans;
