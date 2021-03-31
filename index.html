@@ -31,7 +31,9 @@
 								<option value="mile">Mile</option>
 								<option value="km">Kilometer</option>
 								<option value="m">Meter</option>
-								<!-- TODO: Add centimeter -->
+								<option value="f">Foot</option>
+								<option value="inch">Inch</option>
+								<option value="cm">Centimeter</option>
 							</select>
 						</div>
 					</div>
@@ -42,21 +44,23 @@
 								<option value="mile">Mile</option>
 								<option value="km">Kilometer</option>
 								<option value="m">Meter</option>
-								<!-- TODO: Add centimeter -->
+								<option value="f">Foot</option>
+								<option value="inch">Inch</option>
+								<option value="cm">Centimeter</option>
 							</select>
 						</div>
 					</div>
 					<div class="col-lg-6 col-12 w-100">
 						<div class="info">
 							<label for="value">Value</label>
-							<input type="number" name="number" id="value" onchange="getInputValue();"
+							<input autocomplete="off" type="number" name="number" id="value" onchange="getInputValue();"
 								placeholder="Enter the value" class="w-100">
 						</div>
 					</div>
 					<div class="col-lg-6 col-12 w-100">
 						<div class="info">
-							<label for="value">Result</label>
-							<input readonly type="number" name="number" id="answer" placeholder="Result" class="w-100">
+							<label for="result">Result</label>
+							<input readonly type="text" name="number" id="answer" placeholder="Result" class="w-100">
 						</div>
 					</div>
 					<div class="col-lg-3 col-3">

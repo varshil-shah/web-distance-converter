@@ -45,7 +45,7 @@ option {
   /* background-color: aqua; */
   height: auto;
   padding: 12px 10px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 8px 35px 0px;
   border-radius: 5px;
   background-color: #fff;
 }
@@ -53,4 +53,10 @@ option {
 #answer {
   color: red;
   font-weight: bold;
+  font-size: 21px;
+}
+
+label {
+  color: #000;
+  font-weight: 500;
 }

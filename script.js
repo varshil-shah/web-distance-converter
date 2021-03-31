@@ -5,10 +5,34 @@ const error = document.getElementById("error");
 const distanceValue = {
   "mile-km": 1.60934,
   "mile-m": 1609.34,
+  "mile-f": 5280,
+  "mile-inch": 63360,
+  "mile-cm": 160934,
   "km-mile": 0.621371,
   "km-m": 1000,
+  "km-f": 3280.84,
+  "km-inch": 39370.1,
+  "km-cm": 100000,
   "m-mile": 0.000621371,
   "m-km": 0.001,
+  "m-f": 3.28084,
+  "m-inch": 39.3701,
+  "m-cm": 100,
+  "f-mile": 0.000189394,
+  "f-km": 0.0003048,
+  "f-m": 0.3048,
+  "f-inch": 12,
+  "f-cm": 30.48,
+  "inch-mile": 1.5783e-5,
+  "inch-km": 2.54e-5,
+  "inch-m": 0.0254,
+  "inch-f": 0.0833333,
+  "inch-cm": 2.54,
+  "cm-mile": 6.2137e-6,
+  "cm-km": 1e-5,
+  "cm-m": 0.01,
+  "cm-f": 0.0328084,
+  "cm-inch": 0.393701,
 };
 
 convertButton.addEventListener("click", () => {
@@ -17,19 +41,16 @@ convertButton.addEventListener("click", () => {
 
 getConvertFrom = () => {
   let convertFrom = document.getElementById("convertFrom").value;
-  console.log(convertFrom);
   return convertFrom;
 };
 
 getConvertTo = () => {
   let convertTo = document.getElementById("convertTo").value;
-  console.log(convertTo);
   return convertTo;
 };
 
 getInputValue = () => {
   let inputValue = document.getElementById("value").value;
-  console.log(inputValue);
   return inputValue;
 };
 
@@ -46,9 +67,10 @@ calculate = () => {
   let concatString = getConvertFrom() + "-" + getConvertTo();
   let value = getInputValue();
   if (getConvertFrom() == getConvertTo()) {
-    answer.innerHTML = 0;
+    answer.value = "NULL";
     error.innerHTML = "Please select different conversion";
   } else if (value <= 0) {
+    answer.value = "NULL";
     error.innerHTML = "Value must be greater than zero";
   } else {
     error.innerHTML = "";
