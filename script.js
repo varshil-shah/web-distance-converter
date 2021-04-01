@@ -92,7 +92,7 @@ getResult = (concatString, value) => {
   for (let val in distanceValue) {
     if (concatString == val) {
       let number = distanceValue[val];
-      return value * number;
+      return (value * number).toPrecision(4);
     }
   }
 };
@@ -112,7 +112,6 @@ calculate = () => {
     error.classList.remove("error");
     error.innerHTML = "";
     let ans = getResult(concatString, value);
-    ans.toFixed(4);
     answer.value = ans;
   }
 };
