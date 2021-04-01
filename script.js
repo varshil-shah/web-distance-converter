@@ -112,6 +112,7 @@ calculate = () => {
     error.classList.remove("error");
     error.innerHTML = "";
     let ans = getResult(concatString, value);
+    ans.toFixed(4);
     answer.value = ans;
   }
 };
